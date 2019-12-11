@@ -111,28 +111,28 @@ Piece Piezas::gameState()
     //X score stuff
     for (int i = 0; i < BOARD_COLS; i++)
     {
-        for (int i = 0; i < BOARD_ROWS-1; j++)
+        for (int j = 0; j < BOARD_ROWS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == X)
                 tempScore++;
             else
             { 
-                if (Xscore < tempScore)
-                    Xscore = tempScore;
+                if (XScore < tempScore)
+                    XScore = tempScore;
                 tempScore = 0;
             }
         }
     }    
     for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int i = 0; i < BOARD_COLS-1; j++)
+        for (int j = 0; j < BOARD_COLS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == X)
                 tempScore++;
             else
             { 
-                if (Xscore < tempScore)
-                    Xscore = tempScore;
+                if (XScore < tempScore)
+                    XScore = tempScore;
                 tempScore = 0;
             }
         }
@@ -141,7 +141,7 @@ Piece Piezas::gameState()
     //O score stuff
     for (int i = 0; i < BOARD_COLS; i++)
     {
-        for (int i = 0; i < BOARD_ROWS-1; j++)
+        for (int j = 0; j < BOARD_ROWS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == O)
                 tempScore++;
@@ -155,7 +155,7 @@ Piece Piezas::gameState()
     }
     for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int i = 0; i < BOARD_COLS-1; j++)
+        for (int j = 0; j < BOARD_COLS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == O)
                 tempScore++;
@@ -169,9 +169,9 @@ Piece Piezas::gameState()
     }
     
     //Winner Check
-    if (Xscore > Oscore)
+    if (XScore > Oscore)
         return X;
-    else if (Oscore > Xscore)
+    else if (Oscore > XScore)
         return O;
     else
         return Blank;
