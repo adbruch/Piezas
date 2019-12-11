@@ -22,10 +22,10 @@
 **/
 Piezas::Piezas()
 {
-    for (int i = 0; i < BOARD_COLS; i++)
-        for (int j = 0; j < BOARD_ROWS; j++)
-            board[i][j] = Blank;
     turn = X;
+    for (int i = 0; i < BOARD_ROWS; i++)
+        for (int j = 0; j < BOARD_COLS; j++)
+            board[i][j] = Blank;
 }
 
 // Toggle turn
