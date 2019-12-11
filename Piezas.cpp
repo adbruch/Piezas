@@ -127,11 +127,11 @@ Piece Piezas::gameState()
             }
         }
     }    
-    for (int i = 0; i < BOARD_ROWS; i++)
+    for (int i = 0; i < BOARD_COLS; i++)
     {
-        for (int j = 0; j < BOARD_COLS-1; j++)
+        for (int j = 0; j < BOARD_ROWS-1; j++)
         {
-            if (board[i][j] == board[i][j+1] && board[i][j] == X)
+            if (board[j][i] == board[j][i+1] && board[j][i] == X)
                 tempScore++;
             else
             { 
@@ -157,16 +157,16 @@ Piece Piezas::gameState()
             }
         }
     }
-    for (int i = 0; i < BOARD_ROWS; i++)
+    for (int i = 0; i < BOARD_COLS; i++)
     {
-        for (int j = 0; j < BOARD_COLS-1; j++)
+        for (int j = 0; j < BOARD_ROWS-1; j++)
         {
-            if (board[i][j] == board[i][j + 1] && board[i][j] == O)
+            if (board[j][i] == board[j][i+1] && board[j][i] == O)
                 tempScore++;
             else
             { 
-                if (OScore < tempScore)
-                    OScore = tempScore;
+                if (XScore < tempScore)
+                    XScore = tempScore;
                 tempScore = 0;
             }
         }

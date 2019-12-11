@@ -38,3 +38,39 @@ TEST(PiezasTest, dropPiece0X)
 	Piezas pieza;
 	ASSERT_EQ( pieza.dropPiece(0), X);
 }
+
+TEST(PiezasTest, dropPiece0O)
+{
+	Piezas pieza;
+	pieza.dropPiece(0);
+	ASSERT_EQ( pieza.dropPiece(0), O);
+}
+TEST(PiezasTest, dropPieceInvalid)
+{
+	Piezas pieza;
+	ASSERT_EQ( pieza.dropPiece(4), Invalid);
+}
+
+TEST(PiezasTest, dropPieceFull)
+{
+	Piezas pieza;
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	ASSERT_EQ( pieza.dropPiece(2), Blank);
+}
+
+TEST(PiezasTest, dropPieceRandom)
+{
+	Piezas pieza;
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	pieza.dropPiece(1);
+	pieza.dropPiece(3);
+	pieza.dropPiece(0);
+	pieza.dropPiece(0);
+	ASSERT_EQ( pieza.dropPiece(2), _XSTRING_);
+}
