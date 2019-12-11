@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/adbruch/Piezas.svg?branch=master)](https://travis-ci.org/adbruch/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/adbruch/Piezas/badge.svg?branch=master)](https://coveralls.io/github/adbruch/Piezas?branch=master)
 # Piezas
 
 ## Associated Enumerated Types
