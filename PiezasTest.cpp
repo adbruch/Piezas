@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Piezas.h"
+#include <vector>
  
 class PiezasTest : public ::testing::Test
 {

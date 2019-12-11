@@ -30,7 +30,7 @@ enum Piece
 class Piezas
 {
   private:
-  	Piece board[BOARD_ROWS][BOARD_COLS];
+  	std::vector < std::vector<Piece> > board;
   	Piece turn;
 
   public:
