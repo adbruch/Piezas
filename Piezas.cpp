@@ -98,5 +98,82 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+    int tempScore = 0;
+    int XScore = 0;
+    int OScore = 0;
+
+    //Invalid check
+    for (int i = 0; i < BOARD_COLS; i++)
+        for (int j = 0; j < BOARD_ROWS; j++)
+            if (board[i][j] == Blank)
+                return Invalid;
+
+    //X score stuff
+    for (int i = 0; i < BOARD_COLS; i++)
+    {
+        for (int i = 0; i < BOARD_ROWS-1; j++)
+        {
+            if (board[i][j] == board[i][j + 1] && board[i][j] == X)
+                tempScore++;
+            else
+            { 
+                if (Xscore < tempScore)
+                    Xscore = tempScore;
+                tempScore = 0;
+            }
+        }
+    }    
+    for (int i = 0; i < BOARD_ROWS; i++)
+    {
+        for (int i = 0; i < BOARD_COLS-1; j++)
+        {
+            if (board[i][j] == board[i][j + 1] && board[i][j] == X)
+                tempScore++;
+            else
+            { 
+                if (Xscore < tempScore)
+                    Xscore = tempScore;
+                tempScore = 0;
+            }
+        }
+    }
+
+    //O score stuff
+    for (int i = 0; i < BOARD_COLS; i++)
+    {
+        for (int i = 0; i < BOARD_ROWS-1; j++)
+        {
+            if (board[i][j] == board[i][j + 1] && board[i][j] == O)
+                tempScore++;
+            else
+            { 
+                if (Oscore < tempScore)
+                    Oscore = tempScore;
+                tempScore = 0;
+            }
+        }
+    }
+    for (int i = 0; i < BOARD_ROWS; i++)
+    {
+        for (int i = 0; i < BOARD_COLS-1; j++)
+        {
+            if (board[i][j] == board[i][j + 1] && board[i][j] == O)
+                tempScore++;
+            else
+            { 
+                if (Oscore < tempScore)
+                    Oscore = tempScore;
+                tempScore = 0;
+            }
+        }
+    }
+    
+    //Winner Check
+    if (Xscore > Oscore)
+        return X;
+    else if (Oscore > Xscore)
+        return O;
+    else
+        return Blank;
+    
 }
