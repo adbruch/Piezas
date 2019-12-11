@@ -22,6 +22,20 @@
 **/
 Piezas::Piezas()
 {
+    for (int i = 0; i < BOARD_COLS; i++)
+        for (int j = 0; j < BOARD_ROWS; j++)
+            board[i][j] = Blank;
+    turn = X;
+}
+
+// Toggle turn
+Piece Piezas::toggleTurn()
+{
+  if (turn == X)
+    turn = O;
+  else if (turn == O)
+    turn = X;
+  return turn;
 }
 
 /**
@@ -30,6 +44,9 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+    for (int i = 0; i < BOARD_COLS; i++)
+        for (int j = 0; j < BOARD_ROWS; j++)
+            board[i][j] = Blank;
 }
 
 /**
@@ -42,7 +59,23 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+    if (column > 3 || column < 0)
+        return invalid;
+    int temp = -1;
+    piece temp = Blank;
+    for (int i = BOARD_COL; i > 0; i--)
+    {
+        if (board[i][column] == Blank)
+            temp = i;
+    }
+    if (temp != -1)
+    {
+        board[temp][column] = turn;
+        temp = turn;
+    }
+    toggleTurn();
+    reutrn temp;
+    
 }
 
 /**
