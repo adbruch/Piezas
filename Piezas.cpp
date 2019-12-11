@@ -64,10 +64,8 @@ Piece Piezas::dropPiece(int column)
     int temp = -1;
     Piece tempPiece = Blank;
     for (int i = BOARD_COLS; i > 0; i--)
-    {
         if (board[i][column] == Blank)
             temp = i;
-    }
     if (temp != -1)
     {
         board[temp][column] = turn;
@@ -75,7 +73,6 @@ Piece Piezas::dropPiece(int column)
     }
     toggleTurn();
     return tempPiece;
-
 }
 
 /**
@@ -84,7 +81,10 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+    if (row < 0 || row > BOARD_ROWS || column < 0 || column > BOARD_COLS)
+        return Invalid;
+    else
+        return board[row][column];
 }
 
 /**
