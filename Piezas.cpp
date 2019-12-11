@@ -62,7 +62,7 @@ Piece Piezas::dropPiece(int column)
     if (column > 3 || column < 0)
         return (Invalid);
     int temp = -1;
-    piece tempPiece = Blank;
+    Piece tempPiece = Blank;
     for (int i = BOARD_COLS; i > 0; i--)
     {
         if (board[i][column] == Blank)
