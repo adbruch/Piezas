@@ -147,8 +147,8 @@ Piece Piezas::gameState()
                 tempScore++;
             else
             { 
-                if (Oscore < tempScore)
-                    Oscore = tempScore;
+                if (OScore < tempScore)
+                    OScore = tempScore;
                 tempScore = 0;
             }
         }
@@ -161,17 +161,17 @@ Piece Piezas::gameState()
                 tempScore++;
             else
             { 
-                if (Oscore < tempScore)
-                    Oscore = tempScore;
+                if (OScore < tempScore)
+                    OScore = tempScore;
                 tempScore = 0;
             }
         }
     }
     
     //Winner Check
-    if (XScore > Oscore)
+    if (XScore > OScore)
         return X;
-    else if (Oscore > XScore)
+    else if (OScore > XScore)
         return O;
     else
         return Blank;
