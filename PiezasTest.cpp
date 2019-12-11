@@ -18,3 +18,22 @@ TEST(PiezasTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+//Bottom tests are about ToggleTurn
+TEST(PiezasTest, toggleTurnO)
+{
+	Piezas pieza;
+	ASSERT_EQ( pieza.toggleTurn(), O);
+}
+
+TEST(PiezasTest, toggleTurnX)
+{
+	Piezas pieza;
+	pieza.toggleTurn();
+	ASSERT_EQ( pieza.toggleTurn(), X);
+}
+//dropPiece test-------------------------------------------------------------------------
+TEST(PiezasTest, dropPiece0X)
+{
+	Piezas pieza;
+	ASSERT_EQ( pieza.dropPiece(0), X);
+}
