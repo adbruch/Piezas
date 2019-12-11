@@ -60,10 +60,10 @@ void Piezas::reset()
 Piece Piezas::dropPiece(int column)
 {
     if (column > 3 || column < 0)
-        return invalid;
+        return (Invalid);
     int temp = -1;
     piece temp = Blank;
-    for (int i = BOARD_COL; i > 0; i--)
+    for (int i = BOARD_COLS; i > 0; i--)
     {
         if (board[i][column] == Blank)
             temp = i;
@@ -74,7 +74,7 @@ Piece Piezas::dropPiece(int column)
         temp = turn;
     }
     toggleTurn();
-    reutrn temp;
+    return temp;
     
 }
 
