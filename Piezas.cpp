@@ -48,8 +48,8 @@ Piece Piezas::toggleTurn()
 **/
 void Piezas::reset()
 {
-    for (int i = 0; i < BOARD_COLS; i++)
-        for (int j = 0; j < BOARD_ROWS; j++)
+    for (int i = 0; i < BOARD_ROWS; i++)
+        for (int j = 0; j < BOARD_COLS; j++)
             board[i][j] = Blank;
 }
 
@@ -67,7 +67,7 @@ Piece Piezas::dropPiece(int column)
         return (Invalid);
     int temp = -1;
     Piece tempPiece = Blank;
-    for (int i = BOARD_COLS; i > 0; i--)
+    for (int i = BOARD_ROWS; i > 0; i--)
         if (board[i][column] == Blank)
             temp = i;
     if (temp != -1)
@@ -107,15 +107,15 @@ Piece Piezas::gameState()
     int OScore = 0;
 
     //Invalid check
-    for (int i = 0; i < BOARD_COLS; i++)
-        for (int j = 0; j < BOARD_ROWS; j++)
+    for (int i = 0; i < BOARD_ROWS; i++)
+        for (int j = 0; j < BOARD_COLS; j++)
             if (board[i][j] == Blank)
                 return Invalid;
 
     //X score stuff
-    for (int i = 0; i < BOARD_COLS; i++)
+    for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int j = 0; j < BOARD_ROWS-1; j++)
+        for (int j = 0; j < BOARD_COLS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == X)
                 tempScore++;
@@ -131,7 +131,7 @@ Piece Piezas::gameState()
     {
         for (int j = 0; j < BOARD_COLS-1; j++)
         {
-            if (board[i][j] == board[i][j + 1] && board[i][j] == X)
+            if (board[i][j] == board[i][j+1] && board[i][j] == X)
                 tempScore++;
             else
             { 
@@ -143,9 +143,9 @@ Piece Piezas::gameState()
     }
 
     //O score stuff
-    for (int i = 0; i < BOARD_COLS; i++)
+    for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int j = 0; j < BOARD_ROWS-1; j++)
+        for (int j = 0; j < BOARD_COLS-1; j++)
         {
             if (board[i][j] == board[i][j + 1] && board[i][j] == O)
                 tempScore++;
