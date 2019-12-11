@@ -62,7 +62,7 @@ Piece Piezas::dropPiece(int column)
     if (column > 3 || column < 0)
         return (Invalid);
     int temp = -1;
-    piece temp = Blank;
+    piece tempPiece = Blank;
     for (int i = BOARD_COLS; i > 0; i--)
     {
         if (board[i][column] == Blank)
@@ -71,11 +71,11 @@ Piece Piezas::dropPiece(int column)
     if (temp != -1)
     {
         board[temp][column] = turn;
-        temp = turn;
+        tempPiece = turn;
     }
     toggleTurn();
-    return temp;
-    
+    return tempPiece;
+
 }
 
 /**
