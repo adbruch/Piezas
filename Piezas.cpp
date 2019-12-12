@@ -67,7 +67,7 @@ Piece Piezas::dropPiece(int column)
         return (Invalid);
     int temp = -1;
     Piece tempPiece = Blank;
-    for (int i = BOARD_ROWS; i > 0; i--)
+    for (int i = BOARD_ROWS-1; i > 0; i--)
         if (board[i][column] == Blank)
             temp = i;
     if (temp != -1)

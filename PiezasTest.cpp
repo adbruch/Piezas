@@ -66,7 +66,6 @@ TEST(PiezasTest, dropPieceRandom)
 	Piezas pieza;
 	pieza.dropPiece(2);
 	pieza.dropPiece(2);
-	pieza.dropPiece(2);
 	pieza.dropPiece(3);
 	pieza.dropPiece(1);
 	pieza.dropPiece(3);
