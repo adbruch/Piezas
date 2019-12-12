@@ -96,7 +96,7 @@ TEST(PiezasTest, pieceAtRandom)
 	pieza.dropPiece(3);
 	pieza.dropPiece(0);
 	pieza.dropPiece(0);
-	ASSERT_EQ( pieza.pieceAt(0,0), X);
+	ASSERT_EQ( pieza.pieceAt(0,2), X);
 }
 
 TEST(PiezasTest, pieceAtRandom2)
