@@ -118,14 +118,14 @@ TEST(PiezasTest, PieceAtInvalid)
 {
 	Piezas pieza;
 	pieza.dropPiece(0);
-	ASSERT_EQ( pieza.dropPiece(-1,4), Invalid);
+	ASSERT_EQ( pieza.pieceAt(-1,4), Invalid);
 }
 
 TEST(PiezasTest, PieceAtBlank)
 {
 	Piezas pieza;
 	pieza.dropPiece(0);
-	ASSERT_EQ( pieza.dropPiece(1,1), Blank);
+	ASSERT_EQ( pieza.pieceAt(1,1), Blank);
 }
 
 //gameState tests------------------------------
