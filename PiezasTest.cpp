@@ -88,7 +88,7 @@ TEST(PiezasTest, resetTest)
 TEST(PiezasTest, resetTestEmpty)
 {
 	Piezas pieza;
-	ASSERT_EQ( pieza.reset(), );
+	ASSERT_EQ( pieza.reset(), NULL);
 }
 //pieceAt tests-----------------------------------------------
 TEST(PiezasTest, pieceAtRandom)
