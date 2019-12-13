@@ -71,7 +71,7 @@ TEST(PiezasTest, dropPieceRandom)
 	pieza.dropPiece(3);
 	pieza.dropPiece(0);
 	pieza.dropPiece(0);
-	ASSERT_EQ( pieza.dropPiece(2), X);
+	ASSERT_EQ(pieza.dropPiece(2), X);
 }
 //reset test-----------------------
 

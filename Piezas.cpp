@@ -112,61 +112,58 @@ Piece Piezas::gameState()
             if (board[i][j] == Blank)
                 return Invalid;
 
-    //X score stuff
-    for (int i = 0; i < BOARD_ROWS; i++)
-    {
-        for (int j = 0; j < BOARD_COLS-1; j++)
-        {
-            if (board[i][j] == board[i][j + 1] && board[i][j] == X)
-                tempScore++;
-            else
-            { 
-                if (XScore < tempScore)
-                    XScore = tempScore;
-                tempScore = 0;
-            }
-        }
-    }    
+    //Cycle Horizontally for X
     for (int i = 0; i < BOARD_COLS; i++)
     {
-        for (int j = 0; j < BOARD_ROWS-1; j++)
+        for (int j = 1; j < BOARD_ROWS; j++)
         {
-            if (board[j][i] == board[j][i+1] && board[j][i] == X)
+            if (board[j-1][i] == board[j][i] && board[j][i] == X)
                 tempScore++;
             else
-            { 
-                if (XScore < tempScore)
+                if (tempScore > XScore)
                     XScore = tempScore;
                 tempScore = 0;
             }
         }
     }
-
-    //O score stuff
+    //Cycle Vertically for X
     for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int j = 0; j < BOARD_COLS-1; j++)
+        for (int j = 1; j < BOARD_COLS; j++)
         {
-            if (board[i][j] == board[i][j + 1] && board[i][j] == O)
+            if (board[i][j-1] == board[i][j] && board[i][j] == X)
                 tempScore++;
             else
-            { 
-                if (OScore < tempScore)
+                if (tempScore > XScore)
+                    XScore = tempScore;
+                tempScore = 0;
+            }
+        }
+    }
+    //Cycle Horizontally for O
+    for (int i = 0; i < BOARD_COLS; i++)
+    {
+        for (int j = 1; j < BOARD_ROWS; j++)
+        {
+            if (board[j-1][i] == board[j][i] && board[j][i] == O)
+                tempScore++;
+            else
+                if (tempScore > OScore)
                     OScore = tempScore;
                 tempScore = 0;
             }
         }
     }
-    for (int i = 0; i < BOARD_COLS; i++)
+    //Cycle Vertically for O
+    for (int i = 0; i < BOARD_ROWS; i++)
     {
-        for (int j = 0; j < BOARD_ROWS-1; j++)
+        for (int j = 1; j < BOARD_COLS; j++)
         {
-            if (board[j][i] == board[j][i+1] && board[j][i] == O)
+            if (board[i][j-1] == board[i][j] && board[i][j] == O)
                 tempScore++;
             else
-            { 
-                if (XScore < tempScore)
-                    XScore = tempScore;
+                if (tempScore > OScore)
+                    OScore = tempScore;
                 tempScore = 0;
             }
         }
