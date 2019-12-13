@@ -62,7 +62,7 @@ TEST(PiezasTest, dropPieceFull)
 }
 
 TEST(PiezasTest, dropPieceRandom)
-{
+{/
 	Piezas pieza;
 	pieza.dropPiece(2);
 	pieza.dropPiece(2);
@@ -71,7 +71,7 @@ TEST(PiezasTest, dropPieceRandom)
 	pieza.dropPiece(3);
 	pieza.dropPiece(0);
 	pieza.dropPiece(0);
-	ASSERT_EQ(pieza.dropPiece(2), X);
+	ASSERT_EQ(pieza.dropPiece(2), O);
 }
 //reset test-----------------------
 
@@ -176,14 +176,14 @@ TEST(PiezasTest, gameStateX)
 	pieza.dropPiece(0);
 	pieza.dropPiece(1);
 	pieza.dropPiece(0);
-	pieza.dropPiece(2);
+	pieza.dropPiece(1);
 	pieza.dropPiece(0);
+	pieza.dropPiece(2);
 	pieza.dropPiece(3);
-	pieza.dropPiece(1);
+	pieza.dropPiece(3);
 	pieza.dropPiece(2);
 	pieza.dropPiece(2);
 	pieza.dropPiece(1);
-	pieza.dropPiece(3);
 	pieza.dropPiece(3);
 	ASSERT_EQ( pieza.gameState(), X);
 }
@@ -195,14 +195,14 @@ TEST(PiezasTest, gameStateO)
 	pieza.dropPiece(0);
 	pieza.dropPiece(1);
 	pieza.dropPiece(0);
-	pieza.dropPiece(2);
+	pieza.dropPiece(1);
 	pieza.dropPiece(0);
+	pieza.dropPiece(2);
 	pieza.dropPiece(3);
-	pieza.dropPiece(1);
+	pieza.dropPiece(3);
 	pieza.dropPiece(2);
 	pieza.dropPiece(2);
 	pieza.dropPiece(1);
-	pieza.dropPiece(3);
 	pieza.dropPiece(3);
 	ASSERT_EQ( pieza.gameState(), O);
 }
