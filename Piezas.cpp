@@ -120,6 +120,7 @@ Piece Piezas::gameState()
             if (board[j-1][i] == board[j][i] && board[j][i] == X)
                 tempScore++;
             else
+            {
                 if (tempScore > XScore)
                     XScore = tempScore;
                 tempScore = 0;
@@ -134,6 +135,7 @@ Piece Piezas::gameState()
             if (board[i][j-1] == board[i][j] && board[i][j] == X)
                 tempScore++;
             else
+            {
                 if (tempScore > XScore)
                     XScore = tempScore;
                 tempScore = 0;
@@ -148,6 +150,7 @@ Piece Piezas::gameState()
             if (board[j-1][i] == board[j][i] && board[j][i] == O)
                 tempScore++;
             else
+            {
                 if (tempScore > OScore)
                     OScore = tempScore;
                 tempScore = 0;
@@ -162,6 +165,7 @@ Piece Piezas::gameState()
             if (board[i][j-1] == board[i][j] && board[i][j] == O)
                 tempScore++;
             else
+            {
                 if (tempScore > OScore)
                     OScore = tempScore;
                 tempScore = 0;
