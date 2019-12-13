@@ -62,7 +62,7 @@ TEST(PiezasTest, dropPieceFull)
 }
 
 TEST(PiezasTest, dropPieceRandom)
-{/
+{
 	Piezas pieza;
 	pieza.dropPiece(2);
 	pieza.dropPiece(2);
