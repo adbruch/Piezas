@@ -206,3 +206,40 @@ TEST(PiezasTest, gameStateO)
 	pieza.dropPiece(3);
 	ASSERT_EQ( pieza.gameState(), O);
 }
+
+TEST(PiezasTest, gameStateO2)
+{
+	Piezas pieza;
+	pieza.toggleTurn();
+	pieza.dropPiece(0);
+	pieza.dropPiece(0);
+	pieza.dropPiece(1);
+	pieza.dropPiece(0);
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	pieza.dropPiece(1);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	ASSERT_EQ( pieza.gameState(), O);
+}
+
+TEST(PiezasTest, gameStateX2)
+{
+	Piezas pieza;
+	pieza.dropPiece(0);
+	pieza.dropPiece(0);
+	pieza.dropPiece(1);
+	pieza.dropPiece(0);
+	pieza.dropPiece(2);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	pieza.dropPiece(1);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	pieza.dropPiece(2);
+	pieza.dropPiece(3);
+	ASSERT_EQ( pieza.gameState(), X);
+}
